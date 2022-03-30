@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="accordion accordion-flush" id=""accordionFAQ>
+        {% for block in section.blocks %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="{{block.id}}">{{block.setting}}</h2>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+   "name": "FAQ",
+   "blocks":[
+   {
+        "name": "FAQ Items",
+        "type": "faq",
+        "settings": [
+            {
+                "type": "text",
+                "id":"title",
+                "label":"Title",
+                "default": "FAQ Title Example",
+            },
+            {
+                "type": "richtext",
+                "id":"answer",
+                "label":"Answer"
+            }
+        ]
+        }
+   ]
+}
+{% endschema %}
